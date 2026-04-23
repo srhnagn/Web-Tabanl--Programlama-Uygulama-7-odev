@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Web_Tabanli_Programlama_Uygulama_DbFirst")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4c7255651a92793f1c83400da7f157276268f44")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a447a84137ea146a98956224a8b58edbd0a65e08")]
 [assembly: System.Reflection.AssemblyProductAttribute("Web_Tabanli_Programlama_Uygulama_DbFirst")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Web_Tabanli_Programlama_Uygulama_DbFirst")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
