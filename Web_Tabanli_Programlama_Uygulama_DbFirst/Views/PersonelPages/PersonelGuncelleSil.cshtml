@@ -1,0 +1,45 @@
+@using Web_Tabanli_Programlama_Uygulama_DbFirst.Models;
+@model Personel
+
+<div>
+    <form method="post">
+
+        <!-- Gizli Id — hangi kayıt olduğunu controller'a bildirir -->
+        <input type="hidden" name="Id" value="@Model.Id">
+
+        <div>
+            <label>Ad:</label>
+            <input type="text" name="Ad" value="@Model.Ad">
+        </div>
+        <div>
+            <label>Soyad:</label>
+            <input type="text" name="Soyad" value="@Model.Soyad">
+        </div>
+        <div>
+            <label>Eposta:</label>
+            <input type="email" name="Eposta" value="@Model.Eposta">
+        </div>
+        <div>
+            <label>Telefon:</label>
+            <input type="text" name="Telefon" value="@Model.Telefon">
+        </div>
+        <div>
+            <label>Departman:</label>
+            <input type="text" name="Departman" value="@Model.Departman">
+        </div>
+        <div>
+            <label>Sehir:</label>
+            <input type="text" name="Sehir" value="@Model.Sehir">
+        </div>
+
+        <!-- Her buton farklı action'a gider -->
+        <button type="submit"
+                asp-controller="PersonelPages"
+                asp-action="PersonelGuncelle">Güncelle</button>
+
+        <button type="submit"
+                asp-controller="PersonelPages"
+                asp-action="Sil">Sil</button>
+
+    </form>
+</div>

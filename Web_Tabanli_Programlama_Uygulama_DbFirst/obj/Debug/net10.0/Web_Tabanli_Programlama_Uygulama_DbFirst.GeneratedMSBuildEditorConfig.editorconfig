@@ -42,6 +42,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uZWxQYWdlcy9QZXJzb25lbEVrbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/serhanagan/Developer/WTP/Web Tabanlı Programlama Uygulama 7 odev/Web_Tabanli_Programlama_Uygulama_DbFirst/Views/PersonelPages/PersonelGuncelleSil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uZWxQYWdlcy9QZXJzb25lbEd1bmNlbGxlU2lsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/serhanagan/Developer/WTP/Web Tabanlı Programlama Uygulama 7 odev/Web_Tabanli_Programlama_Uygulama_DbFirst/Views/PersonelPages/PersonelListele.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uZWxQYWdlcy9QZXJzb25lbExpc3RlbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/serhanagan/Developer/WTP/Web Tabanlı Programlama Uygulama 7 odev/Web_Tabanli_Programlama_Uygulama_DbFirst/Views/PersonelPages/Thanks.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uZWxQYWdlcy9UaGFua3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,13 @@
+@model List<Web_Tabanli_Programlama_Uygulama_DbFirst.Models.Personel>
+
+@foreach(var item in Model)
+{
+    <tr>
+        <td>@item.Ad</td>
+        <td>@item.Soyad</td>
+        <td>
+            <!-- Güncelle linkine tıklayınca o kişinin id'si gider, form dolu açılır -->
+            <a asp-action="GuncellenecegiGetir" asp-route-id="@item.Id">Güncelle/Sil</a>
+        </td>
+    </tr>
+}

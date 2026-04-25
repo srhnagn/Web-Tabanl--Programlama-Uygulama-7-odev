@@ -47,7 +47,7 @@ namespace Web_Tabanli_Programlama_Uygulama_DbFirst.Controllers
         {
             // Hocanın tarzı: Where ve FirstOrDefault
             var deger = context.Personels.Where(x => x.Id == id).FirstOrDefault();
-            return View(deger);
+            return View("PersonelGuncelleSil", deger);
         }
 
         // --- GÜNCELLEME (POST) --- Veritabanına yazar
@@ -80,6 +80,16 @@ namespace Web_Tabanli_Programlama_Uygulama_DbFirst.Controllers
             
             return View();
         }
+
+        public IActionResult PersonelListele()
+        {
+            // Veritabanından tüm personelleri çek
+            var liste = context.Personels.ToList();
+
+            // Listeyi View'e gönder
+            return View(liste);
+        }
+
 
     }
 }
