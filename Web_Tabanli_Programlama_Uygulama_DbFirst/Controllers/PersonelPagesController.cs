@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Web_Tabanli_Programlama_Uygulama_DbFirst.Models;
 namespace Web_Tabanli_Programlama_Uygulama_DbFirst.Controllers
 {
     public class PersonelPagesController : Controller
@@ -6,9 +7,9 @@ namespace Web_Tabanli_Programlama_Uygulama_DbFirst.Controllers
 
         // 1. Hocanın tarzı: Hem new ile tanımla hem de Injection ile ez.
         
-        DataContext DataContext = new DataContext();
+        Models.DataContext context = new Models.DataContext();
 
-        public IActionResult PersonelController(DataContext _context)
+        public PersonelPagesController(Models.DataContext _context)
         {
             context = _context;
         }
@@ -22,9 +23,9 @@ namespace Web_Tabanli_Programlama_Uygulama_DbFirst.Controllers
 
         // --- EKLEME (POST ile veritabanına kaydediyoruz) ---
         [HttpPost]
-        public IActionResult PersonelKaydet(Personel PersonelModel)
+        public IActionResult PersonelKaydet(Models.Personel PersonelModel)
         {
-            context.Personeller.Add(PersonelModel)
+            context.Personels.Add(PersonelModel);
             context.SaveChanges();
             return View("Thanks", PersonelModel);
         }
@@ -33,8 +34,8 @@ namespace Web_Tabanli_Programlama_Uygulama_DbFirst.Controllers
         [HttpPost]
         public IActionResult Sil(int id)
         {
-            var deger = context.Personeller.Where(x => x.Id == id).FirstOrDefault();
-            context.Personeller.Remove(deger);
+            var deger = context.Personels.Where(x => x.Id == id).FirstOrDefault();
+            context.Personels.Remove(deger);
             context.SaveChanges();
             
             return View();
@@ -45,29 +46,33 @@ namespace Web_Tabanli_Programlama_Uygulama_DbFirst.Controllers
         public IActionResult GuncellenecegiGetir(int id)
         {
             // Hocanın tarzı: Where ve FirstOrDefault
-            var deger = context.Personeller.Where(x => x.Id == id).FirstOrDefault();
+            var deger = context.Personels.Where(x => x.Id == id).FirstOrDefault();
             return View(deger);
         }
 
         // --- GÜNCELLEME (POST) --- Veritabanına yazar
         [HttpPost]
-        public IActionResult Guncelle(Personel entity, Personel gizli = null)
+        public IActionResult Guncelle(Models.Personel entity, Models.Personel gizli = null)
         {
             // Hocanın tarzı: Manuel alan eşleme mantığı
             if(gizli == null)
             {
-                gizli = context.Personeller.Where(p => p.Id == entity.Id).FirstOrDefault();
+                gizli = context.Personels.Where(p => p.Id == entity.Id).FirstOrDefault();
             }
             else
             {
-                context.Personeller.Attach(gizli);
+                context.Personels.Attach(gizli);
             }
 
             if(gizli != null)
             {
                 // BURASI ÖNEMLİ: Kendi Urun modelindeki özellikleri buraya tek tek yazmalısın
                 gizli.Ad = entity.Ad;
-                gizli.Fiyat = entity.Fiyat;
+                gizli.Soyad = entity.Soyad;
+                gizli.Eposta = entity.Eposta;
+                gizli.Telefon = entity.Telefon;
+                gizli.Departman = entity.Departman;
+                gizli.Sehir = entity.Sehir;
                 // Eğer başka özelliklerin varsa onları da buraya ekle
                 
                 context.SaveChanges();
