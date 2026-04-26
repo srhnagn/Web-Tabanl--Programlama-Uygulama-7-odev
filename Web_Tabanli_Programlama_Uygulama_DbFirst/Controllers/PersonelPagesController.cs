@@ -52,29 +52,18 @@ namespace Web_Tabanli_Programlama_Uygulama_DbFirst.Controllers
 
         // --- GÜNCELLEME (POST) --- Veritabanına yazar
         [HttpPost]
-        public IActionResult Guncelle(Models.Personel entity, Models.Personel gizli = null)
+        public IActionResult Guncelle(Models.Personel entity)
         {
-            // Hocanın tarzı: Manuel alan eşleme mantığı
-            if(gizli == null)
-            {
-                gizli = context.Personels.Where(p => p.Id == entity.Id).FirstOrDefault();
-            }
-            else
-            {
-                context.Personels.Attach(gizli);
-            }
+            var gizli = context.Personels.Where(p => p.Id == entity.Id).FirstOrDefault();
 
             if(gizli != null)
             {
-                // BURASI ÖNEMLİ: Kendi Urun modelindeki özellikleri buraya tek tek yazmalısın
                 gizli.Ad = entity.Ad;
                 gizli.Soyad = entity.Soyad;
                 gizli.Eposta = entity.Eposta;
                 gizli.Telefon = entity.Telefon;
                 gizli.Departman = entity.Departman;
                 gizli.Sehir = entity.Sehir;
-                // Eğer başka özelliklerin varsa onları da buraya ekle
-                
                 context.SaveChanges();
             }
             
