@@ -4,10 +4,13 @@
 {
     <tr>
         <td>@item.Ad</td>
+        <br/>
         <td>@item.Soyad</td>
+        <br/>
         <td>
             <!-- Güncelle linkine tıklayınca o kişinin id'si gider, form dolu açılır -->
             <a asp-action="GuncellenecegiGetir" asp-route-id="@item.Id">Güncelle/Sil</a>
         </td>
+        <br/>
     </tr>
 }

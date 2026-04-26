@@ -38,10 +38,10 @@ namespace Web_Tabanli_Programlama_Uygulama_DbFirst.Controllers
             context.Personels.Remove(deger);
             context.SaveChanges();
             
-            return View();
+            return View("Done");
         }
 
-        // --- GÜNCELLEME (GET) --- TextBox'ları dolduruyoruz
+        // --- GÜNCELLEME ve SİLME (GET) --- TextBox'ları dolduruyoruz
         [HttpGet]
         public IActionResult GuncellenecegiGetir(int id)
         {
@@ -78,7 +78,7 @@ namespace Web_Tabanli_Programlama_Uygulama_DbFirst.Controllers
                 context.SaveChanges();
             }
             
-            return View();
+            return View("Done");
         }
 
         public IActionResult PersonelListele()
